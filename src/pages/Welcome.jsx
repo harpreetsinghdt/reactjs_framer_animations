@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import cityImg from "../assets/city.jpg";
 import heroImg from "../assets/hero.png";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, cubicBezier } from "framer-motion";
 
 export default function WelcomePage() {
   const { scrollY } = useScroll();
@@ -23,6 +23,10 @@ export default function WelcomePage() {
   //   [0, 200, 300, 500],
   //   ["#eee", "#eeddee", "#ddeedd", "#00f"]
   // );
+  const rotate = useTransform(scrollY, [0, 200, 300, 500], [0, 50, 50, 300], {
+    clamp: false,
+  });
+
   return (
     <>
       <header id="welcome-header">
@@ -31,9 +35,13 @@ export default function WelcomePage() {
           style={{ scale: scaleText, y: yText }}
         >
           <h1>Ready for a challenge?</h1>
-          <Link id="cta-link" to="/challenges">
+          <motion.Link
+            id="cta-link"
+            to="/challenges"
+            style={{ scale: scaleText, y: yText, rotate }}
+          >
             Get Started
-          </Link>
+          </motion.Link>
         </motion.div>
         <motion.img
           style={{ opacity: opacityCity, y: yCity }}
