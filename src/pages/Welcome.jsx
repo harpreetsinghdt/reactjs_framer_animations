@@ -35,13 +35,9 @@ export default function WelcomePage() {
           style={{ scale: scaleText, y: yText }}
         >
           <h1>Ready for a challenge?</h1>
-          <motion.Link
-            id="cta-link"
-            to="/challenges"
-            style={{ scale: scaleText, y: yText, rotate }}
-          >
+          <Link id="cta-link" to="/challenges">
             Get Started
-          </motion.Link>
+          </Link>
         </motion.div>
         <motion.img
           style={{ opacity: opacityCity, y: yCity }}
