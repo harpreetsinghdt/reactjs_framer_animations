@@ -51,6 +51,6 @@ export default function ChallengeTabs({
         </Tab>
       </menu>
       <div>{children}</div>
-    </Fr>
+    </Fragment>
   );
 }
