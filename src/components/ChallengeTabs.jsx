@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Badge from "./Badge.jsx";
 import { motion } from "framer-motion";
 
@@ -25,7 +26,7 @@ export default function ChallengeTabs({
   children,
 }) {
   return (
-    <>
+    <Fragment>
       <menu id="tabs">
         <Tab
           isSelected={selectedType === "active"}
@@ -50,6 +51,6 @@ export default function ChallengeTabs({
         </Tab>
       </menu>
       <div>{children}</div>
-    </>
+    </Fr>
   );
 }
